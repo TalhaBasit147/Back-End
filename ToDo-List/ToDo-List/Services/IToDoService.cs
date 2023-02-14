@@ -7,6 +7,8 @@ namespace ToDo_List.Services
         Task CreateAsync(ToDoItem newItem);
 
         Task<ToDoItem?> GetAsync(string id);
+
+        Task<List<ToDoItem>> GetAsync();
         Task UpdateAsync(string id, ToDoItem updatedItem);
         Task RemoveAsync(string id);
     }

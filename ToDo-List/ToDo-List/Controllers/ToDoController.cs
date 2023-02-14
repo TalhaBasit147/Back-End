@@ -21,12 +21,9 @@ namespace ToDo_List.Controllers
             _toDoService = toDoService;
         }
 
-       // [HttpPost(Name = "ToDo")]
-        //public async Task<IActionResult> Add([FromBody] ToDoItem item)
-        //{
-        //    await _toDoService.CreateAsync(item);
-        //    return Ok();
-        //}
+        [HttpGet]
+        public async Task<List<ToDoItem>> Get() =>
+           await _toDoService.GetAsync();
 
         [HttpPost(Name = "ToDo")]
         public async Task<IActionResult> Post([FromBody] ToDoItem item)

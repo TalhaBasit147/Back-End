@@ -32,5 +32,8 @@ namespace ToDo_List.Services
 
         public async Task RemoveAsync(string id) =>
             await _toDoItemCollection.DeleteOneAsync(x => x.ItemId == id);
+
+        public async Task<List<ToDoItem>> GetAsync() =>
+            await _toDoItemCollection.Find(_ => true).ToListAsync();
     }
 }
